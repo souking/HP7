@@ -1,0 +1,267 @@
+/* body {
+  color: red;
+  font-size: 12px;
+  color: skyblue;
+  border: 1px solid pink;
+}
+h1{
+  border: inherit;
+} */
+/* ①ファイルの中身が長くなってきた時に別のファイルに書くことで見え方が良くなる
+font-sizeで文字の大きさを変えることができる
+また、波カッコの中のことをプロパティというが、同じプロパティ内だったら後に書いた方が優先される
+また、h1だけじゃなくbodyで括ればbodyないの色が全て変わる
+またborderで線を書くことができる（囲い）
+しかし、borderはmdnで調べると継承なしなのでh１とpタグの間にはボーダーラインがないがinheritを書いてあげることで継承する */
+
+
+
+
+/* @charset "utf-8"
+h1 {
+  font-family: Verdana, 'Arial Black', メイリオ, sans-serif;
+} */
+/* ④font-familyでフォントを変えることができる
+左からフォントは実行される、なかったなかった場合は右のフォントが使われる
+フォント名に空白が使われる場合はコーテーションかダブルコーテーションが必要
+CSSに日本語が含まれる場合は文字化けする可能性があるためcharsetを入れる
+sans-serif（総称フォントファミリー）はsans-serif（ゴシック体）serif(明朝体)cursive(筆記体)monospace(等幅フォント)になる
+総称フォントファミリーは最後に指定しておくことでフォントが見つからなかったときにこの中から勝手に選んでくれるから必ず書いておく  */
+
+
+
+
+
+/* p{
+  font-size: 16px;
+  line-height: 48px;
+  line-height: 3em;
+  line-height: 3;
+  background-color: pink;
+} */
+/* ⑤テキストが入力されたら行ボックスというものが作られその高さを４８pxとしフォントのサイズを１６pxにすると48-16=32より文字と行ボックスの間は16pxずつとなる
+また、行ボックスを文字の３倍にしたいときは３emもしくは３としてあげる。emは単位 */
+
+
+
+
+
+/* main{
+  font-size: 32px;
+  line-height: 2em;
+  line-height: 2;
+  color: aqua;
+}
+section{
+  font-size: 16px;
+} */
+/* ⑥この場合単位ありとなしの違いは、ありの場合はmainで計算された32✖️2の64pxがsectionでも継承され、単位なしの場合はmainでは32✖️2,sectionでは16✖️2の大きさになる */
+
+
+
+
+/* p{
+  line-height: 5;
+  background-color: pink;
+}
+img{
+  vertical-align: middle;
+} */
+/* ⑦imgタグの中の画像の位置を変える場合はvertical-alignを使う、何もかかなかった場合はbaselineに合わせられ、middleにすると文字の真ん中に合わせられ、top,bottomではそれぞれ行ボックスの上と下に合わせられ、2pxとするとbaselineより2px上に-2pxにするとbaselineより2px下になる */
+
+
+
+/* ul{
+  list-style-type: circle;
+  list-style-position: inside;
+  list-style-image: url(../img/icon.png);
+  list-style: circle inside url(../img/icon.png);
+}
+ol{
+  list-style-type: lower-alpha;
+  list-style-type: none;
+} */
+/* ⑧リストのスタイリング
+circleは白丸に、lower-alphaはa,b,c・・・となり、noneはなくなる
+また、記号をリストの内側に入れる場合は、list-style-positionをinsideとする
+また記号ではなく画像を使う場合は、list-style-image: url()して中に画像のファイル名を入れる
+また、これらをまとめて書くこともできるlist-style: circle inside url(../img/icon.png);
+これらは一緒に使えたり上書きされてしまったりとあるので、mdnで確認する */
+
+
+
+/* .info{
+  color: skyblue;
+} */
+/* ⑨クラスセレクター
+例えばpタグが複数ある中で一部分だけにスタイルをつけたい場合はhtmlの方にはタグの中にクラスをつけてあげ、cssの方には{}の前を.クラスの名前にしてあげる */
+
+
+
+
+/* .box1{
+  background-color: orange;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px; */
+  /* margin: 0 0 20px; */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+/* }
+.box2{
+  background-color: skyblue;
+  width: 50%;
+  height: 50%; */
+  /* overflow: hidden;
+  overflow: scroll; */
+  /* border-width: 2px;
+  border-style: solid;
+  border-color: blue; */
+  /* border: 2px solid blue; */
+  /* border: 2px dashed blue; */
+  /* border-top: 2px solid blue;
+  border-bottom: 2px solid blue; */
+  /* border: 2px solid blue; */
+  /* border-bottom: none; */
+  /* border-radius: 10px ; */
+  /* padding-top: 20px ;
+  padding-left: 40px; */
+/* } */
+/* .box3{
+  background-color: tomato;
+  width: 100px;
+  height: 40px;
+  display: inline;
+  display: inline-block;
+  display: none;
+} */
+/* ⑩width,height,overflowプロパティ,境界線
+background-colorは色を、横と高さはpxや％で変えられる
+文字を書きすぎて背景色からはみ出た場合はoverflowを使う、hiddenにすれば切り捨てられ、scrollにすればその中でスクロールすれば下に文字が出てくる
+また、境界線を書くには、borderプロパティを使い、styleでsolidとすると実線に、dashedは点線になる
+また、この３つをまとめて書くこともできる
+また、つける位置もborderの後に書くことで指定できる
+また何も指定しない後にnoneとするとその場所のボーダーがなくなる
+また、角を丸めるにはradiusにする
+またpadding(width,heightからborderまでの距離),margin(borderの外側)はleft-autoにすれば右により、right-outにすれば左により、両方書けば真ん中になる
+また、値の決め方は複雑だから調べる。　ドットインストールだと＃22＃23 */
+
+/* ⑪displayプロパティ
+display要素はblockとinlineの2つの要素に分けられる
+blockは縦に追加され、inlineは左に詰めて追加されていく
+blockはサイズを変更でき、inlineはできないがinline-blockにすれば変更できる */
+
+
+/* .box1{
+  background-color: orange;
+  width: 100px;
+  height: 100px; */
+
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3; */
+
+  /* width: calc((100% - 40px) / 3); */
+
+  /* box-shadow: 10px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 10px 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px; */
+
+/* } */
+/* .box2{ */
+  /* box-sizing: border-box; */
+
+  /* background-color: skyblue;
+  width: 100px;
+  height: 100px; */
+
+  /* border: 10px solid blue; */
+  /* position: static; */
+  /* position: relative; */
+  /* position: fixed;
+  top: 30px;
+  left: 30px; */
+
+  /* position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 2; */
+
+  /* width: calc((100% - 40px) / 3);
+  margin: 0 auto; */
+
+  /* box-shadow: 10px 5px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 10px 5px 3px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px; */
+
+/* } */
+/* .box3{
+  background-color: tomato;
+  width: 100px;
+  height: 100px; */
+
+  /* position: absolute;
+  top: 60px;
+  left: 60px;
+  z-index: 1; */
+  
+  /* width: calc((100% - 40px) / 3);
+  margin-left: auto; */
+
+  /* box-shadow: 10px 5px 3px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px; */
+/* } */
+/* ⑫positionプロパティを使った要素の位置の変更
+staticは通常通りに配置
+relativeは通常の位置からずらしたいときにtop,leftなどのキーワードをいれ設定する
+fixedは左上からずらしたい位置を入力すればスクロールしてもついてくる
+#27要素の絶対配置は複雑だから飛ばした
+簡単に説明するとposition: abusoluteの後に位置を入力すれば位置を変える */
+
+/* ⑬z-indexによる重なりの順を変える
+z-indexの数が小さい数字が上のくる */
+
+/* ⑭box-sizing
+普通ボーダーをつけたらwidth,heightの外側にボーダーラインが付け足され大きくなってしまうが、これを使えばボーダーをつけても大きさが変わらない */
+
+
+/* ⑮calcの使い方(boxの幅の計算など)
+ページの幅を１００％にしたときのそれぞれのboxの幅を計算することができる */
+
+
+/* ⑯要素の影の付け方
+box-shadowを使うのだが一つ目は横の影、２つ目は下、３つ目はぼかし、４つ目は影を拡大することを表す
+これらは背景や文字に影を付け足すことができるが、文字に４つ目の影の拡大はできない */
+
+
+
+/* header{
+  height: 80px; */
+  /* background-color: pink;
+  background-image: url(img/header.png);
+  background-size: cover; 
+  background-position: center;  */
+  /* background: center/cover pink url(../img/header.png);
+} */
+/* ⑰背景の画像の設定
+backgroundプロパティを使う
+imageで背景を画像にする
+sizeを設定しないと、ブラウザ幅を変えても大きさは変わらないので、coverにしてあげるとサイズ比を保存したままになる
+positionをcenterにすると画像の中心を起点に伸縮する、設定しなければ左上が起点
+また、これらを一括プロパティにできる（＊sizeとpositionは/で区切る） */
+
+
+
+/* img{
+  float: right;
+}
+h2{
+  clear: right;
+  clear: left;
+  clear: both;
+} */
+/* ⑱floatの使い方
+画像を右に寄せかつテキストを画像と被らせないようにするにはfloat: rightにしてあげる
+またその画像の下の内容は上に詰められるので画像よりも下にするにはclearプロパティを使う
+画像が右にあればright,左にあればleft,両方の場合はboth */
